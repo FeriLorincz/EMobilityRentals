@@ -1,11 +1,11 @@
 package com.appiqus.emobilityrentals.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,5 +19,8 @@ public class Location {
     private String city;
     private String street;
     private Integer number;
+
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
+    private List<Vehicle> vehicle = new ArrayList<>();
 
 }

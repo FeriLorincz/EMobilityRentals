@@ -18,7 +18,7 @@ public class LocationResponse {
     // Constructor ce accepta id, tara, oras, strada, numar:
     public LocationResponse(Integer id, String country, String city, String street, Integer number){
         this.id = id;
-        this.address = country;
+        this.address = country + ", " + city + ", " + street + ", " + number;
     }
 
     //constructorul gol
